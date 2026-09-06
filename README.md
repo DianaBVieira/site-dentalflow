@@ -14,3 +14,10 @@ Fase de descoberta e definição. Nenhuma versão foi publicada, nenhum dado rea
 ## Próximo passo recomendado
 
 Validar a proposta com ao menos uma pessoa de cada perfil principal — dentista, recepção e gestão — antes de iniciar a implementação.
+
+---
+
+## Status (set/2026)
+
+Este repo passou a ser versionado no GitHub (`DianaBVieira/site-dentalflow`, privado).
+Visão completa em `C:\dev\STATUS-site-dentalflow.md` e `C:\dev\STATUS-Utopia-VISAO-GERAL.md`.
