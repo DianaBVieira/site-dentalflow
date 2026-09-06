@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+
+# local environment / secrets
+.env
+.env.*
+*.pem
+*serviceAccount*.json
+
+# claude code local settings
+.claude/settings.local.json
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.log
