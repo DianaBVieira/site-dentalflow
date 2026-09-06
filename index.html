@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DentalFlow — Agenda odontológica e agendamento pelo WhatsApp</title>
+<meta name="description" content="DentalFlow organiza a agenda da clínica odontológica pelo WhatsApp: agendamento, confirmações e lembretes automáticos, CRM de retorno e painel de ocupação e faltas. Reduza faltas sem perder o atendimento humano." />
+<meta name="keywords" content="software para clínica odontológica, agenda para dentista, agendamento odontológico pelo WhatsApp, confirmação de consulta automática, reduzir faltas no consultório, CRM odontológico, sistema de agendamento para dentista, lembrete de consulta odontológica" />
+<meta name="author" content="Utopia Desenvolvimentos" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#123d32" />
+<link rel="canonical" href="https://dentalflow.utopiadesenvolvimentos.com.br/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="DentalFlow" />
+<meta property="og:title" content="DentalFlow — Da primeira mensagem ao retorno do paciente" />
+<meta property="og:description" content="Agenda odontológica organizada pelo WhatsApp: agendamento, confirmações automáticas, CRM de retorno e painel de resultados." />
+<meta property="og:url" content="https://dentalflow.utopiadesenvolvimentos.com.br/" />
+<meta property="og:image" content="https://dentalflow.utopiadesenvolvimentos.com.br/assets/site/dashboard.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="DentalFlow — Agenda odontológica no WhatsApp" />
+<meta name="twitter:description" content="Agendamento, confirmações e retornos da clínica em um fluxo só." />
+<meta name="twitter:image" content="https://dentalflow.utopiadesenvolvimentos.com.br/assets/site/dashboard.jpg" />
+
+<link rel="icon" href="assets/site/icone.png" type="image/png" />
+<link rel="apple-touch-icon" href="assets/site/icone.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.utopiadesenvolvimentos.com.br/#organization",
+      "name": "Utopia Desenvolvimentos",
+      "url": "https://www.utopiadesenvolvimentos.com.br/",
+      "sameAs": ["https://www.instagram.com/utopiadesenvolvimentos/"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "DentalFlow",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Plataforma de gestão e relacionamento para clínicas odontológicas: agenda por profissional, agendamento e confirmações pelo WhatsApp, CRM de retorno e painel de ocupação e faltas.",
+      "publisher": { "@id": "https://www.utopiadesenvolvimentos.com.br/#organization" },
+      "offers": { "@type": "Offer", "priceCurrency": "BRL", "price": "0", "description": "Demonstração e programa piloto sob consulta." }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "O paciente precisa instalar algum aplicativo?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O paciente conversa pelo WhatsApp que já usa. A clínica acessa o DentalFlow pelo navegador, no computador da recepção ou no tablet." } },
+        { "@type": "Question", "name": "Como o DentalFlow ajuda a reduzir faltas?", "acceptedAnswer": { "@type": "Answer", "text": "Ele envia confirmações e lembretes configuráveis pelo WhatsApp e organiza a lista de retornos. O paciente confirma, reagenda ou cancela na própria conversa, e a recepção vê tudo em um painel." } },
+        { "@type": "Question", "name": "O atendimento fica 100% automático?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O assistente se identifica como assistente virtual da clínica e resolve o básico (disponibilidade, agendamento, confirmação). A qualquer momento a conversa passa para uma pessoa da equipe." } },
+        { "@type": "Question", "name": "Integra com a agenda que já usamos?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, há sincronização opcional e segura com o Google Agenda, além das visões diária e semanal por profissional dentro do próprio DentalFlow." } },
+        { "@type": "Question", "name": "E a segurança dos dados dos pacientes?", "acceptedAnswer": { "@type": "Answer", "text": "Credenciais de WhatsApp, Google e IA nunca ficam no navegador. O acesso é por função (administrador, dentista, recepção, financeiro), com consentimento versionado, criptografia e registro de auditoria." } },
+        { "@type": "Question", "name": "Já posso usar na minha clínica?", "acceptedAnswer": { "@type": "Answer", "text": "O DentalFlow está em piloto controlado. Fale com a gente pelo WhatsApp para uma demonstração e para entrar na lista de clínicas piloto." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --green: #2e9e7e;
+  --green-dark: #123d32;
+  --green-vivid: #1fb98d;
+  --cream: #f6f4ee;
+  --sand: #ece7db;
+  --paper: #ffffff;
+  --ink: #1f2a26;
+  --muted: #5c6b64;
+  --line: rgba(18, 61, 50, .12);
+  --amber: #c9862e;
+  --font-sans: 'Manrope', system-ui, -apple-system, Arial, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'Manrope', Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--font-sans); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+svg { display: block; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+p { line-height: 1.7; }
+.section { padding: 100px max(6vw, 22px); }
+.eyebrow { display: inline-flex; align-items: center; gap: 7px; margin: 0 0 18px; color: var(--green); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.eyebrow svg { width: 15px; height: 15px; }
+
+.nav { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 74px; padding: 0 max(6vw, 22px); background: rgb(246 244 238 / 88%); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+.nav .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 19px; font-weight: 800; color: var(--green-dark); }
+.nav .brand img { width: 34px; height: 34px; border-radius: 9px; }
+.nav nav { display: flex; gap: 26px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.nav nav a:hover { color: var(--green-dark); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 0 20px; border-radius: 12px; font-family: var(--font-sans); font-weight: 800; font-size: 14px; transition: transform .2s, box-shadow .2s, background .2s; }
+.btn svg { width: 18px; height: 18px; }
+.btn-primary { background: var(--green-dark); color: #fff; box-shadow: 0 12px 28px rgb(18 61 50 / 22%); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgb(18 61 50 / 30%); }
+.btn-ghost { border: 1px solid var(--line); background: var(--paper); color: var(--green-dark); }
+.btn-wa { background: #1fa855; color: #fff; }
+.btn-wa:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.nav .btn { min-height: 40px; padding: 0 15px; }
+
+.hero { padding: 84px max(6vw, 22px) 0; text-align: center; }
+.hero h1 { max-width: 900px; margin: 0 auto; font-size: clamp(2.3rem, 5.4vw, 4.1rem); }
+.hero h1 em { color: var(--green); font-style: normal; }
+.hero > p { max-width: 620px; margin: 22px auto 30px; color: var(--muted); font-size: 18px; }
+.hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.trust { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 34px; color: var(--muted); font-size: 13px; }
+.trust span { display: flex; align-items: center; gap: 6px; }
+.trust svg { width: 15px; height: 15px; color: var(--green); }
+
+.shot { max-width: 1080px; margin: 56px auto 0; padding: 0 max(6vw, 22px); }
+.shot .frame { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--paper); box-shadow: 0 40px 90px rgb(18 61 50 / 16%); }
+.shot .bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 13px; background: var(--sand); border-bottom: 1px solid var(--line); }
+.shot .bar i { width: 9px; height: 9px; border-radius: 50%; background: #c4bda9; }
+.shot figcaption { margin: 12px 0 0; text-align: center; color: var(--muted); font-size: 12px; }
+
+.strip { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; padding: 18px 22px; background: var(--green-dark); color: #fff; font-family: var(--font-display); font-weight: 500; font-size: 14px; }
+.strip i { width: 5px; height: 5px; border-radius: 50%; background: var(--green-vivid); }
+
+.head { max-width: 720px; margin: 0 auto 46px; text-align: center; }
+.head h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--green-dark); }
+.head p { margin: 14px 0 0; color: var(--muted); font-size: 17px; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1140px; margin: 0 auto; }
+.card { padding: 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+.card .ic { display: grid; width: 46px; height: 46px; place-items: center; border-radius: 13px; background: rgb(46 158 126 / 12%); color: var(--green-dark); margin-bottom: 16px; }
+.card .ic svg { width: 22px; height: 22px; }
+.card h3 { margin: 0 0 8px; font-size: 18px; color: var(--green-dark); }
+.card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+.steps { background: var(--paper); }
+.steps-list { max-width: 900px; margin: 0 auto; display: grid; gap: 4px; }
+.steps-list li { display: grid; grid-template-columns: 56px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); list-style: none; }
+.steps-list b { font-family: var(--font-display); font-size: 26px; color: var(--green); }
+.steps-list h3 { margin: 0 0 5px; font-size: 18px; color: var(--green-dark); }
+.steps-list p { margin: 0; color: var(--muted); font-size: 14px; }
+
+.audience { background: var(--green-dark); color: #fff; }
+.audience .head h2, .audience .head p { color: #fff; }
+.audience .head p { color: rgb(255 255 255 / 72%); }
+.aud-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1040px; margin: 0 auto; }
+.aud-grid div { padding: 22px; border: 1px solid rgb(255 255 255 / 14%); border-radius: 16px; background: rgb(255 255 255 / 5%); }
+.aud-grid h3 { margin: 0 0 6px; font-size: 16px; }
+.aud-grid p { margin: 0; color: rgb(255 255 255 / 66%); font-size: 13px; }
+
+.sec-lgpd { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.sec-lgpd ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+.sec-lgpd li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); font-size: 14px; }
+.sec-lgpd li svg { width: 18px; height: 18px; color: var(--green); flex: none; margin-top: 2px; }
+.sec-lgpd .box { padding: 30px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+.sec-lgpd .box strong { display: block; font-family: var(--font-display); font-size: 20px; color: var(--green-dark); margin-bottom: 10px; }
+
+.faq-list { max-width: 820px; margin: 0 auto; }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 2px; cursor: pointer; list-style: none; font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--green-dark); }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary span { font-size: 24px; color: var(--green); transition: transform .2s; }
+.faq-list details[open] summary span { transform: rotate(45deg); }
+.faq-list details p { margin: 0; padding: 0 30px 22px 2px; color: var(--muted); font-size: 15px; }
+
+.final { text-align: center; background: radial-gradient(circle at 50% 120%, #2b6452, var(--green-dark) 72%); color: #fff; }
+.final h2 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); }
+.final p { max-width: 520px; margin: 16px auto 26px; color: rgb(255 255 255 / 72%); font-size: 17px; }
+.final small { display: block; margin-top: 14px; color: rgb(255 255 255 / 50%); font-size: 12px; }
+
+.sig { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 200px 1fr; gap: 50px; align-items: center; }
+.sig img { width: 100%; max-height: 120px; object-fit: contain; }
+.sig h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--green-dark); }
+.sig p { margin: 12px 0 0; color: var(--muted); font-size: 15px; }
+.sig a { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; color: var(--green); font-weight: 800; font-size: 14px; }
+.sig a svg { width: 16px; height: 16px; }
+
+footer { padding: 44px max(6vw, 22px); background: #0c211c; color: rgb(255 255 255 / 55%); text-align: center; font-size: 13px; }
+footer .brand { display: inline-flex; align-items: center; gap: 9px; color: #fff; font-family: var(--font-display); font-weight: 800; margin-bottom: 10px; }
+footer .brand img { width: 26px; height: 26px; border-radius: 7px; }
+footer a { color: rgb(255 255 255 / 80%); }
+
+@media (max-width: 900px) {
+  .nav nav { display: none; }
+  .section { padding: 74px 20px; }
+  .grid { grid-template-columns: 1fr 1fr; }
+  .aud-grid { grid-template-columns: 1fr 1fr; }
+  .sec-lgpd { grid-template-columns: 1fr; gap: 26px; }
+  .sig { grid-template-columns: 1fr; text-align: center; gap: 26px; }
+  .sig img { max-height: 90px; margin: 0 auto; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .aud-grid { grid-template-columns: 1fr; }
+  .steps-list li { grid-template-columns: 40px 1fr; gap: 12px; }
+  .hero-actions .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top"><img src="assets/site/dentalflow-logo.png" alt="" /> DentalFlow</a>
+  <nav>
+    <a href="#recursos">Recursos</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#para-quem">Para quem</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+  <a class="btn btn-wa" href="https://wa.me/5527996708542?text=Ol%C3%A1!%20Quero%20conhecer%20o%20DentalFlow%20para%20a%20minha%20cl%C3%ADnica." target="_blank" rel="noreferrer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>
+    Falar no WhatsApp
+  </a>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <span class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>
+      Agenda odontológica no WhatsApp
+    </span>
+    <h1>Da primeira mensagem ao retorno do paciente, <em>tudo em um fluxo só.</em></h1>
+    <p>O DentalFlow responde pacientes pelo WhatsApp, preenche a agenda, confirma consultas e organiza os retornos — sem tirar o controle das mãos da sua equipe.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/5527996708542?text=Ol%C3%A1!%20Quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20DentalFlow." target="_blank" rel="noreferrer">
+        Pedir uma demonstração
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#painel">Ver o painel</a>
+    </div>
+    <div class="trust">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Sem app para o paciente instalar</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Integra com o Google Agenda</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Dados protegidos e LGPD</span>
+    </div>
+  </section>
+
+  <figure class="shot" id="painel">
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <img src="assets/site/dashboard.jpg" width="1400" height="726" alt="Painel do DentalFlow com métricas de consultas, taxa de confirmação, taxa de não-comparecimento e faturamento" />
+    </div>
+    <figcaption>Painel do DentalFlow — imagem ilustrativa com dados de exemplo.</figcaption>
+  </figure>
+
+  <section class="strip" aria-label="Resumo">
+    <span>Menos faltas</span><i></i>
+    <span>Agenda cheia</span><i></i>
+    <span>Histórico organizado</span><i></i>
+    <span>Atendimento humano quando precisa</span>
+  </section>
+
+  <section class="section" id="recursos">
+    <div class="head">
+      <h2>O que o DentalFlow faz pela clínica</h2>
+      <p>Automatiza a parte repetitiva da agenda e do relacionamento, e devolve tempo para a equipe cuidar do paciente.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg></span>
+        <h3>Agenda por profissional</h3>
+        <p>Visões diária e semanal, horários de trabalho, pausas, bloqueios e feriados. Sem choque de horário.</p>
+      </article>
+      <article class="card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg></span>
+        <h3>Agendamento pelo WhatsApp</h3>
+        <p>O assistente consulta a disponibilidade real, agenda, reagenda e cancela — no WhatsApp que o paciente já usa.</p>
+      </article>
+      <article class="card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/><path d="M21 17H3l1.4-1.6A6.6 6.6 0 0 0 6 11.3V10a6 6 0 1 1 12 0v1.3c0 1.6.6 3.2 1.6 4.1z"/></svg></span>
+        <h3>Confirmações e lembretes</h3>
+        <p>Lembretes configuráveis e pedido de confirmação automático. O paciente responde na conversa; a recepção só acompanha.</p>
+      </article>
+      <article class="card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>CRM de retorno e prevenção</h3>
+        <p>Segmentos de pacientes (novos, ativos, faltosos, manutenção), lista de retornos e campanhas com aprovação humana.</p>
+      </article>
+      <article class="card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
+        <h3>Painel de resultados</h3>
+        <p>Taxas de confirmação, falta, cancelamento e reagendamento. Ocupação por profissional e receita potencial x recebida.</p>
+      </article>
+      <article class="card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></span>
+        <h3>Integração com Google Agenda</h3>
+        <p>Sincronização opcional e segura, para a clínica não manter duas agendas em paralelo.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section steps" id="como-funciona">
+    <div class="head">
+      <h2>Como funciona na prática</h2>
+      <p>Do "oi" do paciente ao retorno programado depois da consulta.</p>
+    </div>
+    <ol class="steps-list">
+      <li><b>1</b><div><h3>O paciente manda mensagem</h3><p>O assistente se identifica como assistente virtual da clínica e apresenta o aviso de privacidade.</p></div></li>
+      <li><b>2</b><div><h3>Escolhe serviço e horário</h3><p>O servidor calcula as opções realmente disponíveis por profissional e unidade.</p></div></li>
+      <li><b>3</b><div><h3>Confirma e a consulta é criada</h3><p>O sistema registra a origem do agendamento. A recepção pode assumir a conversa a qualquer momento.</p></div></li>
+      <li><b>4</b><div><h3>Lembretes automáticos</h3><p>O paciente confirma, reagenda ou cancela pelo WhatsApp. Nada de ligações de confirmação uma a uma.</p></div></li>
+      <li><b>5</b><div><h3>Retorno programado</h3><p>Depois da consulta, a equipe registra o resultado e o paciente entra na lista de retorno na hora certa.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="section audience" id="para-quem">
+    <div class="head">
+      <h2>Feito para quem toca a clínica no dia a dia</h2>
+      <p>Clínicas odontológicas pequenas e médias e dentistas autônomos com recepção própria ou compartilhada.</p>
+    </div>
+    <div class="aud-grid">
+      <div><h3>Recepção</h3><p>Agenda confiável, confirmações sem telefone na mão e uma caixa de entrada só.</p></div>
+      <div><h3>Dentistas</h3><p>Agenda por profissional, histórico do paciente e menos buracos de horário.</p></div>
+      <div><h3>Gestão</h3><p>Ocupação, faltas e origem dos agendamentos em números claros.</p></div>
+      <div><h3>Pacientes</h3><p>Marcam e remarcam pelo WhatsApp, sem instalar nada e sem espera.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-lgpd">
+      <div>
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.7 8.9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.5 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/></svg> Segurança e LGPD</span>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--green-dark)">Dado de paciente é dado de saúde. Tratamos assim.</h2>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Credenciais de WhatsApp, Google e IA nunca ficam no navegador.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Acesso por função: administrador, dentista, recepção e financeiro.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Consentimento versionado, com finalidade, data e revogação.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Criptografia em trânsito e em repouso, com registro de auditoria.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> A IA não dá diagnóstico nem orientação clínica. Isso é da equipe.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <strong>Piloto controlado</strong>
+        <p style="margin:0;color:var(--muted);font-size:14px">O DentalFlow está em fase de piloto com clínicas parceiras. Nenhum dado real é importado sem ensaio em cópia e autorização explícita. Quer participar? Fale com a gente.</p>
+        <a class="btn btn-primary" style="margin-top:18px;width:100%" href="https://wa.me/5527996708542?text=Ol%C3%A1!%20Quero%20ser%20cl%C3%ADnica%20piloto%20do%20DentalFlow." target="_blank" rel="noreferrer">Quero ser clínica piloto</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="duvidas">
+    <div class="head"><h2>Perguntas frequentes</h2></div>
+    <div class="faq-list">
+      <details open><summary>O paciente precisa instalar algum aplicativo?<span>+</span></summary><p>Não. O paciente conversa pelo WhatsApp que já usa. A clínica acessa o DentalFlow pelo navegador, no computador da recepção ou no tablet.</p></details>
+      <details><summary>Como o DentalFlow ajuda a reduzir faltas?<span>+</span></summary><p>Ele envia confirmações e lembretes configuráveis pelo WhatsApp e organiza a lista de retornos. O paciente confirma, reagenda ou cancela na própria conversa, e a recepção vê tudo em um painel.</p></details>
+      <details><summary>O atendimento fica 100% automático?<span>+</span></summary><p>Não. O assistente se identifica como assistente virtual da clínica e resolve o básico (disponibilidade, agendamento, confirmação). A qualquer momento a conversa passa para uma pessoa da equipe.</p></details>
+      <details><summary>Integra com a agenda que já usamos?<span>+</span></summary><p>Sim, há sincronização opcional e segura com o Google Agenda, além das visões diária e semanal por profissional dentro do próprio DentalFlow.</p></details>
+      <details><summary>E a segurança dos dados dos pacientes?<span>+</span></summary><p>Credenciais de WhatsApp, Google e IA nunca ficam no navegador. O acesso é por função, com consentimento versionado, criptografia e registro de auditoria.</p></details>
+      <details><summary>Já posso usar na minha clínica?<span>+</span></summary><p>O DentalFlow está em piloto controlado. Fale com a gente pelo WhatsApp para uma demonstração e para entrar na lista de clínicas piloto.</p></details>
+    </div>
+  </section>
+
+  <section class="section final">
+    <h2>Sua agenda pode se organizar sozinha.</h2>
+    <p>Agende uma demonstração do DentalFlow e veja o fluxo completo com dados de exemplo.</p>
+    <a class="btn btn-wa" href="https://wa.me/5527996708542?text=Ol%C3%A1!%20Quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DentalFlow." target="_blank" rel="noreferrer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>
+      Agendar demonstração
+    </a>
+    <small>Atendimento pela Utopia Desenvolvimentos.</small>
+  </section>
+
+  <section class="section" style="background:var(--sand)">
+    <div class="sig">
+      <img src="assets/site/dentalflow-logo.png" alt="DentalFlow" />
+      <div>
+        <span class="eyebrow">Uma solução</span>
+        <h2>DentalFlow é um produto da Utopia Desenvolvimentos.</h2>
+        <p>Criamos sistemas e experiências digitais que unem tecnologia, propósito e cuidado com as pessoas.</p>
+        <a href="https://www.utopiadesenvolvimentos.com.br" target="_blank" rel="noreferrer">
+          Conheça nossas soluções
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="brand"><img src="assets/site/dentalflow-logo.png" alt="" /> DentalFlow</div>
+  <p>Agendamento e relacionamento para clínicas odontológicas.<br />
+  <a href="https://www.utopiadesenvolvimentos.com.br" target="_blank" rel="noreferrer">Utopia Desenvolvimentos</a> · © 2026</p>
+</footer>
+
+</body>
+</html>
