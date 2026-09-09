@@ -197,8 +197,41 @@ footer a { color: rgb(255 255 255 / 80%); }
   .steps-list li { grid-template-columns: 40px 1fr; gap: 12px; }
   .hero-actions .btn { width: 100%; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+/* ===== animações: entrada/saída ao rolar + cards (paleta DentalFlow) ===== */
+.js .head,.js .card,.js .steps-list li,.js .aud-grid > div,.js .sec-lgpd,.js .shot,.js .sig{opacity:0;translate:0 26px;transition:opacity .7s ease,translate .8s cubic-bezier(.22,1,.36,1)}
+.js .head.in,.js .card.in,.js .steps-list li.in,.js .aud-grid > div.in,.js .sec-lgpd.in,.js .shot.in,.js .sig.in{opacity:1;translate:0 0}
+
+.card,.aud-grid > div,.sec-lgpd .box{position:relative;overflow:hidden;cursor:pointer;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s ease,box-shadow .35s ease}
+.card > *,.aud-grid > div > *,.sec-lgpd .box > *{position:relative;z-index:2}
+.card:hover,.sec-lgpd .box:hover{transform:translateY(-6px) scale(1.02) rotate(-.5deg);border-color:var(--green);box-shadow:0 26px 54px -26px rgb(18 61 50 / 32%);z-index:3}
+.aud-grid > div:hover{transform:translateY(-6px) scale(1.02) rotate(-.5deg);border-color:rgb(255 255 255 / 42%);box-shadow:0 26px 54px -26px rgb(0 0 0 / 40%);z-index:3}
+.card:active,.aud-grid > div:active,.sec-lgpd .box:active{transform:scale(.985)}
+.card::before,.aud-grid > div::before,.sec-lgpd .box::before{content:"";position:absolute;top:0;bottom:0;left:0;width:55%;z-index:1;pointer-events:none;background:linear-gradient(90deg,transparent,rgb(46 158 126 / 14%),transparent);transform:translateX(-130%) skewX(-18deg);transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.aud-grid > div::before{background:linear-gradient(90deg,transparent,rgb(255 255 255 / 16%),transparent)}
+.card:hover::before,.aud-grid > div:hover::before,.sec-lgpd .box:hover::before{transform:translateX(330%) skewX(-18deg)}
+.card::after,.aud-grid > div::after,.sec-lgpd .box::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .4s ease;background:radial-gradient(130px 130px at 0 0,rgb(46 158 126 / 18%),transparent 70%),radial-gradient(130px 130px at 100% 100%,rgb(201 134 46 / 16%),transparent 70%)}
+.aud-grid > div::after{background:radial-gradient(130px 130px at 0 0,rgb(255 255 255 / 14%),transparent 70%),radial-gradient(130px 130px at 100% 100%,rgb(31 185 141 / 30%),transparent 70%)}
+.card:hover::after,.aud-grid > div:hover::after,.sec-lgpd .box:hover::after{opacity:1}
+.card.tapped,.aud-grid > div.tapped,.sec-lgpd .box.tapped{animation:dfTap .5s cubic-bezier(.22,1,.36,1);border-color:var(--green);box-shadow:0 0 0 1px rgb(46 158 126 / 55%),0 22px 54px -22px rgb(46 158 126 / 40%)}
+@keyframes dfTap{0%{transform:scale(1)}28%{transform:scale(.955)}60%{transform:scale(1.012)}100%{transform:scale(1)}}
+
+/* título: parte em gradiente animado */
+@keyframes dfShimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.hero h1 em,.grad{background:linear-gradient(100deg,var(--green-dark),var(--green-vivid),var(--green-dark));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:dfShimmer 9s linear infinite;font-style:normal}
+.audience .grad,.final .grad{background-image:linear-gradient(100deg,#eafaf4,var(--green-vivid),#eafaf4)}
+@media (prefers-reduced-motion: reduce){.hero h1 em,.grad{animation:none}}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+  .js .head,.js .card,.js .steps-list li,.js .aud-grid > div,.js .sec-lgpd,.js .shot,.js .sig,
+  .js .head.in,.js .card.in,.js .steps-list li.in,.js .aud-grid > div.in,.js .sec-lgpd.in,.js .shot.in,.js .sig.in{opacity:1 !important;translate:none !important}
+  .card:hover,.aud-grid > div:hover,.sec-lgpd .box:hover{transform:none}
+  .card::before,.aud-grid > div::before,.sec-lgpd .box::before,
+  .card::after,.aud-grid > div::after,.sec-lgpd .box::after{display:none}
+}
 </style>
+<script>document.documentElement.className += ' js';</script>
 </head>
 <body>
 
@@ -256,7 +289,7 @@ footer a { color: rgb(255 255 255 / 80%); }
 
   <section class="section" id="recursos">
     <div class="head">
-      <h2>O que o DentalFlow faz pela clínica</h2>
+      <h2>O que o DentalFlow faz <span class="grad">pela clínica</span></h2>
       <p>Automatiza a parte repetitiva da agenda e do relacionamento, e devolve tempo para a equipe cuidar do paciente.</p>
     </div>
     <div class="grid">
@@ -295,7 +328,7 @@ footer a { color: rgb(255 255 255 / 80%); }
 
   <section class="section steps" id="como-funciona">
     <div class="head">
-      <h2>Como funciona na prática</h2>
+      <h2>Como funciona <span class="grad">na prática</span></h2>
       <p>Do "oi" do paciente ao retorno programado depois da consulta.</p>
     </div>
     <ol class="steps-list">
@@ -309,7 +342,7 @@ footer a { color: rgb(255 255 255 / 80%); }
 
   <section class="section audience" id="para-quem">
     <div class="head">
-      <h2>Feito para quem toca a clínica no dia a dia</h2>
+      <h2>Feito para quem toca a clínica <span class="grad">no dia a dia</span></h2>
       <p>Clínicas odontológicas pequenas e médias e dentistas autônomos com recepção própria ou compartilhada.</p>
     </div>
     <div class="aud-grid">
@@ -324,7 +357,7 @@ footer a { color: rgb(255 255 255 / 80%); }
     <div class="sec-lgpd">
       <div>
         <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.7 8.9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.5 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/></svg> Segurança e LGPD</span>
-        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--green-dark)">Dado de paciente é dado de saúde. Tratamos assim.</h2>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--green-dark)">Dado de paciente é dado de saúde. <span class="grad">Tratamos assim.</span></h2>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Credenciais de WhatsApp, Google e IA nunca ficam no navegador.</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Acesso por função: administrador, dentista, recepção e financeiro.</li>
@@ -342,7 +375,7 @@ footer a { color: rgb(255 255 255 / 80%); }
   </section>
 
   <section class="section" id="duvidas">
-    <div class="head"><h2>Perguntas frequentes</h2></div>
+    <div class="head"><h2>Perguntas <span class="grad">frequentes</span></h2></div>
     <div class="faq-list">
       <details open><summary>O paciente precisa instalar algum aplicativo?<span>+</span></summary><p>Não. O paciente conversa pelo WhatsApp que já usa. A clínica acessa o DentalFlow pelo navegador, no computador da recepção ou no tablet.</p></details>
       <details><summary>Como o DentalFlow ajuda a reduzir faltas?<span>+</span></summary><p>Ele envia confirmações e lembretes configuráveis pelo WhatsApp e organiza a lista de retornos. O paciente confirma, reagenda ou cancela na própria conversa, e a recepção vê tudo em um painel.</p></details>
@@ -354,7 +387,7 @@ footer a { color: rgb(255 255 255 / 80%); }
   </section>
 
   <section class="section final">
-    <h2>Sua agenda pode se organizar sozinha.</h2>
+    <h2>Sua agenda pode <span class="grad">se organizar sozinha.</span></h2>
     <p>Agende uma demonstração do DentalFlow e veja o fluxo completo com dados de exemplo.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
       <a class="btn btn-wa" href="https://wa.me/5527996708542?text=Ol%C3%A1!%20Quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DentalFlow." target="_blank" rel="noreferrer">
@@ -371,7 +404,7 @@ footer a { color: rgb(255 255 255 / 80%); }
       <img src="assets/site/dentalflow-logo.png" alt="DentalFlow" />
       <div>
         <span class="eyebrow">Uma solução</span>
-        <h2>DentalFlow é um produto da Utopia Desenvolvimentos.</h2>
+        <h2>DentalFlow é um produto da <span class="grad">Utopia Desenvolvimentos.</span></h2>
         <p>Criamos sistemas e experiências digitais que unem tecnologia, propósito e cuidado com as pessoas.</p>
         <a href="https://www.utopiadesenvolvimentos.com.br" target="_blank" rel="noreferrer">
           Conheça nossas soluções
@@ -387,6 +420,36 @@ footer a { color: rgb(255 255 255 / 80%); }
   <p>Agendamento e relacionamento para clínicas odontológicas.<br />
   <a href="https://www.utopiadesenvolvimentos.com.br" target="_blank" rel="noreferrer">Utopia Desenvolvimentos</a> · © 2026</p>
 </footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = Array.prototype.slice.call(
+    document.querySelectorAll('.head, .card, .steps-list li, .aud-grid > div, .sec-lgpd, .shot, .sig')
+  );
+  if (reduced || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var ioFired = false;
+    var io = new IntersectionObserver(function (entries) {
+      ioFired = true;
+      entries.forEach(function (e) { e.target.classList.toggle('in', e.isIntersecting); });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+    setTimeout(function () { if (!ioFired) revealEls.forEach(function (el) { el.classList.add('in'); }); }, 4000);
+  }
+
+  /* feedback de toque nos cards */
+  document.querySelectorAll('.card, .aud-grid > div, .sec-lgpd .box').forEach(function (card) {
+    card.addEventListener('click', function () {
+      card.classList.remove('tapped');
+      void card.offsetWidth;
+      card.classList.add('tapped');
+      setTimeout(function () { card.classList.remove('tapped'); }, 520);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
